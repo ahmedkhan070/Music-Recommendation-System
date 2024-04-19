@@ -1,6 +1,6 @@
 # Music Recommendation System
 
-This project demonstrates how to build a music recommendation system using a Spotify dataset. The system employs the cosine similarity algorithm and TF-IDF vectorizer to recommend similar music tracks based on the content of track descriptions. Additionally, it includes a Streamlit app that provides a user-friendly interface for inputting a track and receiving recommendations for similar tracks.
+This project demonstrates how to build a music recommendation system using a Spotify dataset. The system employs K-means clustering to recommend similar music tracks based on the features of tracks. Additionally, it includes a Streamlit app that provides a user-friendly interface for inputting a track and receiving recommendations for similar tracks.
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -14,15 +14,14 @@ This project demonstrates how to build a music recommendation system using a Spo
 
 ## Introduction
 
-The music recommendation system suggests similar music tracks based on the content of track descriptions from a Spotify dataset. The system uses a combination of TF-IDF vectorization and cosine similarity to calculate the similarity between track descriptions and provide recommendations.
+The music recommendation system suggests similar music tracks based on the features of tracks from a Spotify dataset. The system uses K-means clustering to group tracks into clusters based on their audio features and recommend similar tracks from the same cluster.
 
 The project includes a Streamlit app that provides a user-friendly interface for inputting a music track and receiving recommendations for similar tracks.
 
 ## Features
 
 - Uses a Spotify dataset for music recommendations.
-- Implements TF-IDF vectorizer for text representation.
-- Uses cosine similarity to calculate similarity between music tracks.
+- Implements K-means clustering to group tracks based on their audio features.
 - Streamlit app for recommending music based on user input.
 
 ## Setup and Installation
@@ -59,34 +58,33 @@ The project includes a Streamlit app that provides a user-friendly interface for
     - In the app, you will be prompted to input a music track title from the dataset.
     
 3. **Receive Recommendations**:
-    - The system will display a list of recommended tracks similar to the selected music track.
+    - The system will display a list of recommended tracks similar to the selected music track based on K-means clustering.
 
 ## Data
 
-- The Spotify dataset used in this project contains music track information, including track titles, artists, and descriptions.
+- The Spotify dataset used in this project contains music track information, including track titles, artists, and audio features such as tempo, danceability, energy, and more.
 - The dataset is processed and used for building the recommendation system.
 
 ## Recommendation Algorithm
 
-- The recommendation system employs the following methods:
-    - **TF-IDF Vectorization**: Text descriptions of music tracks are transformed into numerical vectors using Term Frequency-Inverse Document Frequency (TF-IDF) vectorization.
-    - **Cosine Similarity**: Cosine similarity is calculated between the input music track and all other tracks based on their TF-IDF vectors to find the most similar tracks.
+- The recommendation system employs K-means clustering to group music tracks based on their audio features and recommend similar tracks from the same cluster.
+    - **K-means Clustering**: Tracks are clustered based on audio features such as tempo, danceability, energy, and more.
+    - **Recommendations**: Similar tracks are recommended from the same cluster as the input track.
 
 ## Code Explanation
 
 - **app.py**:
     - The Streamlit app script for loading the Spotify dataset and running the music recommendation system.
     - Provides a user-friendly interface for inputting a music track and receiving recommendations for similar tracks.
-    - Uses TF-IDF vectorization to transform music track descriptions into vectors and calculates cosine similarity to recommend similar tracks.
+    - Uses K-means clustering to group tracks and recommends similar tracks from the same cluster.
 
 ## References
 
 - [Scikit-learn Documentation](https://scikit-learn.org/)
-- [Cosine Similarity Explained](https://en.wikipedia.org/wiki/Cosine_similarity)
-- [TF-IDF Explained](https://en.wikipedia.org/wiki/Tf%E2%80%93idf)
+- [K-means Clustering Explained](https://en.wikipedia.org/wiki/K-means_clustering)
 - [Streamlit Documentation](https://docs.streamlit.io/)
 - [Spotify API Documentation](https://developer.spotify.com/)
 
 ## Conclusion
 
-This project provides an example of building a music recommendation system using a Spotify dataset and a Streamlit app for user interaction. By employing TF-IDF vectorization and cosine similarity, the system can provide recommendations of similar music tracks based on user input. Feel free to customize and extend this project to suit your needs.
+This project provides an example of building a music recommendation system using a Spotify dataset and a Streamlit app for user interaction. By employing K-means clustering, the system can provide recommendations of similar music tracks based on user input. Feel free to customize and extend this project to suit your needs.
